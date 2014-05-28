@@ -1,0 +1,5 @@
+require 'minitest/autorun'
+require 'minitest/mock'
+require 'minitest/sound'
+require 'minitest/sound/player'
+require 'minitest/sound/reporter'
