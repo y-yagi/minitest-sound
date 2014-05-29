@@ -1,6 +1,11 @@
 # Minitest::Sound
 
-TODO: Write a gem description
+minitest-sound plays sound when test finished.
+
+## Requirements
+
+* `mpg123`
+* `minitest ~> 5.0`
 
 ## Installation
 
@@ -18,12 +23,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'minitest/sound'
+
+Minitest::Sound.success = 'xxx.mp3' # Sound file which does play when a test succeeded.
+Minitest::Sound.failure = 'xxx.mp3' # Sound file which does play when a test failed.
+```
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/minitest-sound/fork )
+1. Fork it ( https://github.com/y-yagi/minitest-sound/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## TODO
+
+* Add test
+* Support soundcloud api
