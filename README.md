@@ -11,15 +11,11 @@ minitest-sound plays sound when test finished.
 
 Add this line to your application's Gemfile:
 
-    gem 'minitest-sound'
+    gem 'minitest-sound', github: 'y-yagi/minitest-sound'
 
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install minitest-sound
 
 ## Usage
 
