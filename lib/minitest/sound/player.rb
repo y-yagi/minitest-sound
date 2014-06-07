@@ -1,9 +1,11 @@
 module Minitest
   module Sound
     class Player
-      def initialize(success: nil, failure: nil)
+      def initialize(success: nil, failure: nil, during_test: nil)
         @success_sound = success
         @failure_sound = failure
+        @during_test_sound = during_test
+        @during_test_pid = nil
       end
 
       def play(file: file, sync: true)
@@ -22,6 +24,15 @@ module Minitest
 
       def failure(sync = true)
         play(file: @failure_sound, sync: sync)
+      end
+
+      def play_during_test_sound(sync = false)
+        @during_test_pid = play(file: @during_test_sound, sync: sync)
+      end
+
+      def stop_during_test_sound
+        return unless @during_test_pid
+        Process.kill('SIGINT', @during_test_pid)
       end
 
       def message
