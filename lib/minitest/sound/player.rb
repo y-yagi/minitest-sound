@@ -18,11 +18,11 @@ module Minitest
         $stderr.puts message
       end
 
-      def success(sync = true)
+      def play_success_sound(sync = true)
         play(file: @success_sound, sync: sync)
       end
 
-      def failure(sync = true)
+      def play_failure_sound(sync = true)
         play(file: @failure_sound, sync: sync)
       end
 

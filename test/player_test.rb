@@ -10,28 +10,28 @@ module MinitestSoundTest
 
     def test_do_nothing_when_unset_success
       player = Minitest::Sound::Player.new
-      player.success
+      player.play_success_sound
       assert_equal(false, play_sound?)
     end
 
     def test_play_success_sound_when_set_success
       success_sound = File.join(@fixtures_directory, 'success.mp3')
       player = Minitest::Sound::Player.new(success: success_sound)
-      pid = player.success(false)
+      pid = player.play_success_sound(false)
       assert_equal(true, play_sound?(success_sound))
       Process.kill('SIGINT', pid)
     end
 
     def test_do_nothing_when_unset_failure
       player = Minitest::Sound::Player.new
-      player.failure
+      player.play_failure_sound
       assert_equal(false, play_sound?)
     end
 
     def test_play_failure_sound_when_set_faiure
       failure_sound = File.join(@fixtures_directory, 'failure.mp3')
       player = Minitest::Sound::Player.new(failure: failure_sound)
-      pid = player.failure(false)
+      pid = player.play_failure_sound(false)
       assert_equal(true, play_sound?(failure_sound))
       Process.kill('SIGINT', pid)
     end
@@ -43,7 +43,7 @@ module MinitestSoundTest
       success_sound = File.join(@fixtures_directory, 'success.mp3')
       player = Minitest::Sound::Player.new(success: success_sound)
 
-      out, err = capture_io { player.success }
+      out, err = capture_io { player.play_success_sound }
       assert_equal(%Q(warning: minitest-sound use "mpg123". Please install "mpg123".\n), err)
     ensure
       ENV['PATH'] = original_path
