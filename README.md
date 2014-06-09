@@ -24,6 +24,7 @@ require 'minitest/sound'
 
 Minitest::Sound.success = 'xxx.mp3' # Sound file which does play when a test succeeded.
 Minitest::Sound.failure = 'xxx.mp3' # Sound file which does play when a test failed.
+Minitest::Sound.during_test = 'xxx.mp3' # Sound file which does play during test.
 ```
 
 ## Contributing
