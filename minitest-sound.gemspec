@@ -6,7 +6,7 @@ require 'minitest/sound/version'
 Gem::Specification.new do |spec|
   spec.name          = "minitest-sound"
   spec.version       = Minitest::Sound::VERSION
-  spec.authors       = ["y_yagi"]
+  spec.authors       = ["Yuji Yaginuma"]
   spec.email         = ["yuuji.yaginuma@gmail.com"]
   spec.summary       = %q{Play a sound when test finished}
   spec.homepage      = "https://github.com/y-yagi/minitest-sound"
