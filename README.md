@@ -27,6 +27,23 @@ Minitest::Sound.failure = '/aaa/bbb/xxx.mp3' # Sound file which does play when a
 Minitest::Sound.during_test = '/aaa/bbb/xxx.mp3' # Sound file which does play during test.
 ```
 
+### When use with `minitest-reporters`
+
+When use it with `minitest-reporters`, it is necessary to set `Minitest::Sound::Reporter` in `Minitest::Reporters.use!`
+
+Example:
+
+```ruby
+require 'minitest/sound/reporter'
+
+
+Minitest::Sound.success = '/aaa/bbb/xxx.mp3'
+Minitest::Sound.failure = '/aaa/bbb/xxx.mp3'
+Minitest::Sound.during_test = '/aaa/bbb/xxx.mp3'
+
+Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new, Minitest::Sound::Reporter.new]
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/y-yagi/minitest-sound/fork )
