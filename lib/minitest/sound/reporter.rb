@@ -19,7 +19,11 @@ module Minitest
       def report
         super
         @player.stop_during_test_sound
-        (errors == 0 && failures == 0) ? @player.play_success_sound : @player.play_failure_sound
+         test_success? ? @player.play_success_sound : @player.play_failure_sound
+      end
+
+      def test_success?
+        errors == 0 && failures == 0
       end
 
 
