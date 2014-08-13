@@ -1,3 +1,4 @@
+require_relative 'sound'
 require_relative 'sound/reporter'
 
 module Minitest
