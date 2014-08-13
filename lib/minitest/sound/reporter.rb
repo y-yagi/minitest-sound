@@ -23,7 +23,7 @@ module Minitest
       end
 
 
-      # When using the following methods together with xxx, they are required.
+      # When using the following methods together with `minitest-reporters`, they are required.
       def add_defaults(defaults); end
 
       def before_test(test); end
