@@ -12,9 +12,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/y-yagi/minitest-sound"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0")
+  spec.files         = %w(LICENSE.txt README.md minitest-sound.gemspec) + Dir['lib/**/*.rb']
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'minitest', '>= 5.0'
