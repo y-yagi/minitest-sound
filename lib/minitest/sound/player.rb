@@ -8,7 +8,7 @@ module Minitest
         @during_test_pid = nil
       end
 
-      def play(file: file, sync: true)
+      def play(file: , sync: true)
         return if file.nil? || file.empty?
 
         pid = spawn("mpg123 #{file}", err: '/dev/null')
