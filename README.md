@@ -1,5 +1,8 @@
 # Minitest::Sound
 
+[![Build Status](https://travis-ci.org/y-yagi/minitest-sound.svg?branch=master)](https://travis-ci.org/y-yagi/minitest-sound)
+[![Gem Version](https://badge.fury.io/rb/minitest-sound.svg)](http://badge.fury.io/rb/minitest-sound)
+
 minitest-sound plays sound when test finished.
 
 ## Requirements
