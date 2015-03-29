@@ -7,7 +7,7 @@ minitest-sound plays sound when test finished.
 
 ## Requirements
 
-* `mpg123`
+* [`mpg123`](http://www.mpg123.de/)
 * `minitest ~> 5.0`
 
 ## Installation
