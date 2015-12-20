@@ -19,15 +19,15 @@ module Minitest
       end
 
       def play_success_sound(sync = true)
-        play(file: @success_sound, sync: sync)
+        play(file: success_sound, sync: sync)
       end
 
       def play_failure_sound(sync = true)
-        play(file: @failure_sound, sync: sync)
+        play(file: failure_sound, sync: sync)
       end
 
       def play_during_test_sound(sync = false)
-        @during_test_pid = play(file: @during_test_sound, sync: sync)
+        @during_test_pid = play(file: during_test_sound, sync: sync)
       end
 
       def stop_during_test_sound
@@ -38,6 +38,20 @@ module Minitest
       def message
         'warning: minitest-sound use "mpg123". Please install "mpg123".'
       end
+
+      private
+
+        def success_sound
+          @success_sound || Minitest::Sound.success
+        end
+
+        def failure_sound
+          @failure_sound || Minitest::Sound.failure
+        end
+
+        def during_test_sound
+          @during_test_sound || Minitest::Sound.during_test
+        end
     end
   end
 end
